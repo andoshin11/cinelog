@@ -26,6 +26,16 @@
       %li.user-area__list.user-area__list_content_button.hidden-xs
         = link_to 'New Post', new_post_path, class: "user-area__button button"
   - else
+    %button.drawer-toggle.drawer-hamburger.header_humberger.visible-xs{type: "button"}
+      %span.sr-only toggle navigation
+      %span.drawer-hamburger-icon
+    %nav.drawer-nav.header_humberger_list.visible-xs{role: "navigation"}
+      %ul.drawer-menu
+        %li 
+          = link_to root_path, class: "sidebar-list-item #{"active" if current_page?(root_path)}", 'data-no-turbolink' => true do
+            .sidebar_icon
+              %i.fa.fa-list-ul{"aria-hidden" => "true"}
+            %span Reservations
     .logo.logo_where_header
       %a{:href => "/"}
-        .logo__title キネログ
+        %img.logo__img{src: "/logo.png"}
