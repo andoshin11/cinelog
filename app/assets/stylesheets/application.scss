@@ -36,6 +36,11 @@ html{
   background-color: #fff;
 }
 
+body{
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search]{
   background-color: transparent;
   border: none;
@@ -119,19 +124,6 @@ textarea{
   }
 }
 
-ul{
-  padding: 0;
-}
-
-.label_service_airbnb{
-  background-color: #fc6467;
-  color: #fff;
-}
-.label_service_homeaway{
-  background-color: #7ea2d4;
-  color: #fff;
-}
-
 /* Mixin */
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -143,13 +135,8 @@ ul{
 
 ul {
   list-style: none;
+  padding: 0;
 }
-
-#earning_rate_chart{
-  height: 350px;
-  padding-top: 50px;
-}
-
 
 /* Block */
 .alert-notice{
@@ -161,17 +148,6 @@ ul {
 }
 
 /* Block */
-.authenticate-action-enter{
-  opacity: 0;
-}
-.authenticate-action-leave-active{
-  opacity: 0;
-}
-.authenticate-action-enter .btn, .authenticate-action-leave-active .btn{
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
 .btn{
   &.btn_status_authenticating{
     background-color: #ddd !important;
@@ -183,7 +159,7 @@ ul {
   color: #666;
   background-color: #fff;
   border: solid 1px #ddd;
-  border-radius: 20px;
+  border-radius: 2px;
   text-align: center;
   letter-spacing: 1px;
   transition: .2s ease-out;
@@ -218,19 +194,6 @@ ul {
 .button_float_right{
   float: right;
   margin-bottom: 20px;
-}
-
-.category-list{
-  list-style: none;
-  .category-list__category{
-    border: solid 1px #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    &:hover{
-      background-color: #ddd;
-    }
-  }
 }
 
 .dropdown{
@@ -326,17 +289,6 @@ ul {
   padding: 0 10px;
 }
 
-.fc-event{
-  border-radius: 10px;
-  &:hover{
-    opacity: .7;
-  }
-}
-
-.fc-ltr .fc-h-event.fc-not-start{
-  padding-left: 10px;
-}
-
 .field_with_errors{
   background-color: #fff !important;
 }
@@ -400,185 +352,19 @@ ul {
     display: inline-block;
   }
 }
-.form_kind_credit{
-  .expire-date{
-    width: 41.66667% !important;
-    text-align: center;
-  }
-}
 
 .header{
-  background-color: #fff;
+  background-color: #000;
   border: 0;
   border-radius: 0;
   position: fixed;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   width: 100%;
   height: 65px;
   z-index: 100;
   box-shadow:0px 1px 3px 0px #bdbdbd;
   -moz-box-shadow:0px 1px 3px 0px #bdbdbd;
   -webkit-box-shadow:0px 1px 3px 0px #bdbdbd;
-}
-
-.house-card{
-  margin-bottom: 30px;
-  box-shadow: 0 3px 0 #d7e4ed;
-  -webkit-box-shadow: 0 3px 0 #d7e4ed;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  padding: 15px 25px;
-  transition: .2s;
-  cursor: pointer;
-  width: 100%;
-  float: left;
-  &:hover, &:focus{
-    background-color: #ddd;
-  }
-  .house-card__info{
-    width: 75%;
-    float: right;
-    .house-card__info__capacity{
-      color: #666;
-      &:hover{
-        color: #666;
-      }
-    }
-    .house-card__info__name{
-      font-size: 18px;
-      line-height: 38px;
-      color: $black;
-    }
-    .house-card__info__status{
-      float: left;
-      width: 30%;
-      font-weight: bold;
-      .house-card__info__status__label{
-        margin-top: 20px;
-        color: rgba(0, 0, 0, 0.2);
-        font-size: 14px;
-        font-weight: bold;
-      }
-      .house-card__info__status__score{
-        font-size: 55px;
-        color: #41BAA4;
-        line-height: 1.2;
-      }
-    }
-  }
-  .house-card__thumbnail{
-    position: relative;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    -webkit-box-flex: 0;
-    flex: 0 0 140px;
-    float: left;
-    margin: 17px 0 0 40px;
-  }
-}
-
-.targetTrue{
-  background-color: $green !important;
-  color: #fff;
-}
-
-.house-cover{
-  margin-bottom: 20px;
-  .house-cover__img{
-    background-size: cover;
-    width: 100%;
-    height: 350px;
-    position: relative;
-  }
-  .house-cover__status{
-    float: right;
-    color: #000;
-    text-align: center;
-    width: 240px;
-    height: 100%;
-    background-color: rgba(256,256,256,.9);
-    .house-cover__status__score{
-      height: 100px;
-      font-size: 20px;
-      line-height: 100px;
-      strong{
-        color: $green;
-        font-size: 24px;
-      }
-    }
-  }
-}
-
-.house-header{
-  .house-header__headline{
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 26px;
-    margin: 30px 0 10px;
-    padding-bottom: 15px;
-    border-bottom: solid 1px #ddd;
-  }
-  .house-header__service{}
-}
-
-.house-list{
-  margin-top: 30px;
-}
-
-
-.info-panel{
-  height: 340px;
-  border-radius: 2px;
-  border: solid 1px #ddd;
-  margin-bottom: 30px;
-  .info-panel__chart{
-    height: 200px;
-    width: 100%;
-    min-width: 200px;
-  }
-  .info-panel__chart__label{
-    text-align: center;
-    font-size: 1.2rem;
-  }
-  .info-panel__column{
-    height: 70px;
-    color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 0;
-  }
-  .info-panel__content{
-    text-align: right;
-    font-size: 23px;
-    width: 100%;
-    border-bottom: solid 1px #ddd;
-    height: 40px;
-    padding: 12px 0 5px;
-  }
-  .info-panel__label{
-    text-align: right;
-    height: 30px;
-    line-height: 30px;
-  }
-}
-
-.list-menu{
-  list-style: none;
-  height: 400px;
-  overflow: scroll;
-  .list-menu__link{
-    width: 100%;
-    overflow: hidden;
-    height: 30px;
-    padding: 0 5px;
-    line-height: 30px;
-    &:hover{
-      background-color: #ddd;
-      opacity: .7;
-      cursor : pointer;
-
-    }
-  }
 }
 
 .loading{
@@ -589,12 +375,9 @@ ul {
 
 .logo{
   .logo__img{
-    margin: calc(35px/2) auto;
+    margin: 5px auto;
     display: block;
     width: 150px;
-    &:visited{
-      background-color: #fff;
-    }
     &:hover{
       background-color: #fff;
       opacity: .7;
@@ -603,6 +386,11 @@ ul {
   &.logo_where_header{
     float: left;
   }
+}
+
+#main_container{
+  padding-top: 65px;
+  height: 100%;
 }
 
 .myModal{
@@ -964,18 +752,6 @@ ul {
   }
 }
 
-.summary-panel{
-  height: 339px;
-  border-radius: 2px;
-  border: solid 1px #ddd;
-  margin: 20px 0 30px;
-  .summary-panel__char{
-    height: 200px;
-    margin: auto;
-    width: 35%;
-  }
-}
-
 .support{
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -1073,47 +849,6 @@ ul {
   }
 }
 
-
-.transition-data{  
-  background-color: #fff;
-  border-radius: 2px;
-  border: solid 1px #ddd;
-  margin-bottom: 30px;
-  padding: 25px;
-  height: 308px;
-  float: left;
-  text-align: left;
-  width: 32%;
-  margin-left: 2%;
-  .transition-data__chart{
-    width: 100%;
-  }
-  .transition-data__content{    
-    font-weight: bold;
-    font-size: 40px;
-    color: $green;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  .transition-data__label{
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  .transition-data__unit{ 
-    color: rgba(0,0,0,0.5);
-    font-size: 32px;
-  }
-}
-
-.transition-data_order_first{
-  margin-left: 0;
-}
-
-.toggle_where_house-list{
-  margin: 0 auto 30px;
-  display: table;
-}
-
 .user-area{
   list-style: none;
   .user-area__button{
@@ -1148,4 +883,7 @@ ul {
   &.user-area_where_header{
     float: right;
   }
+}
+
+.wrapper{
 }

@@ -1,19 +1,8 @@
-%h1 Listing posts
+%h1 Recent posts
 
-%table
-  %tr
-    %th Comment
-    %th
-    %th
-    %th
-
-  - @posts.each do |post|
-    %tr
-      %td= post.comment
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+- @posts.each do |post|
+  = link_to post, class: "post row" do
+    .col-md-2.post__thumbnail
+    .col-md-10.post__content
+      .post__title
+      .post__comment= post.comment

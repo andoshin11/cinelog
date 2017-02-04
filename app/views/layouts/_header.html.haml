@@ -11,10 +11,9 @@
               %i.fa.fa-list-ul{"aria-hidden" => "true"}
             %span Reservations
     .logo.logo_where_header
-      %a{:href => "/dashboard"}
-        %img.logo__img{src: "/logo_sm.png"}
+      %a{:href => "/"}
+        %img.logo__img{src: "/logo.png"}
     %ul.user-area.user-area_where_header
-      #notification
       %li.user_info.user-area__list.dropdown.hidden-xs
         %a#dropdownMenu1.dropdown__toggle{"data-toggle" => "dropdown", :href => "#"}
           = current_user.name
@@ -25,8 +24,7 @@
           %li
             = link_to "Log out", destroy_user_session_path, method: "delete"
       %li.user-area__list.user-area__list_content_button.hidden-xs
-        %a.user-area__button.button.button_fill_true{href: "mailto:contact@be-hostly.com"}
-          Send Feedback
+        = link_to 'New Post', new_post_path, class: "user-area__button button"
   - else
     .logo.logo_where_header
       %a{:href => "/"}

@@ -14,19 +14,21 @@
       = render 'layouts/header'
       #main_container.container-fluid{role: "main"}
         .row
-          - if user_signed_in?
-            / = render 'layouts/sidebar'
-            .col-md-11.col-sm-12#yield_layer
-              - if yield(:title) != ""
-                .page-headline
-                  = yield(:title)
-              = yield
-              / = debug(params) if Rails.env.development?
-          - else
-            .col-md-12
-              - flash.each do |message_type, message|
-                %div{:class => "alert alert-#{message_type}"}= message
-              = yield
+          .col-md-offset-1.col-md-10
+            .row
+              - if user_signed_in?
+                / = render 'layouts/sidebar'
+                .col-md-10.col-sm-12#yield_layer.col-md-offset-2
+                  - if yield(:title) != ""
+                    .page-headline
+                      = yield(:title)
+                  = yield
+                  / = debug(params) if Rails.env.development?
+              - else
+                .col-md-12
+                  - flash.each do |message_type, message|
+                    %div{:class => "alert alert-#{message_type}"}= message
+                  = yield
       = render 'layouts/footer'
     %script{src: 'https://www.gstatic.com/charts/loader.js'}
     %script{src: 'https://www.google.com/jsapi'}
