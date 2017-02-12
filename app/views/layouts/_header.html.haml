@@ -1,5 +1,5 @@
 .header.larger
-  - if user_signed_in? && !current_page?(root_path)
+  - if user_signed_in?
     %button.drawer-toggle.drawer-hamburger.header_humberger.visible-xs{type: "button"}
       %span.sr-only toggle navigation
       %span.drawer-hamburger-icon
@@ -39,3 +39,7 @@
     .logo.logo_where_header
       %a{:href => "/"}
         %img.logo__img{src: "/logo.png"}
+    %ul.user-area.user-area_where_header
+      %li.user-area__list.user-area__list_content_button.hidden-xs
+        = link_to 'Sign In', new_user_session_path, class: "user-area__button button"
+

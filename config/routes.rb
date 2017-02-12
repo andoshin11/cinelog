@@ -18,4 +18,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'static_pages#index'
+
+
+  namespace :api, defaults: { format: :json } do
+    resources :posts, only: [] do
+      collection do
+        get :index
+      end
+      member do
+        get :show
+      end
+    end
+
+  end
 end

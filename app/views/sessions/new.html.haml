@@ -1,0 +1,18 @@
+- provide(:title, "Log In")
+.row
+  .signup.col-md-4.col-md-offset-4
+    .signup__header
+      LOG IN
+    .signup__body
+      = form_for(:session, url: user_session_path, :html => {class: 'form'}) do |f|
+        = f.email_field :email, placeholder: "Email"
+        = f.password_field :password, placeholder: "Password"
+        .row
+          .input-field.col-md-12
+            = f.check_box :remember_me
+            %label{for: :remeber_me} Remember me
+        = f.submit "Log in", class: "button button_fill_true"
+    .signup__register
+      New User?    #{link_to "Sign Up Now!", signup_path}
+    .signup__forgot
+      Forgot Password?    #{link_to "Click Here!", new_user_password_path}
