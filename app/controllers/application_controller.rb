@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from StandardError, with: :handle_error
 
+  helper_method :current_user, :logged_in?
+
   def house_color(house_id)
     current_user.houses.find_by(id: house_id).present? ? current_user.houses.find_by(id: house_id).calendar_color : "#ddd"
   end
@@ -81,11 +83,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def logged_in?
-    user_signed_in?
-  end
-  deprecate logged_in?: :user_signed_in?, deprecator: Deprecator.new
-  helper_method :logged_in?
+  # def logged_in?
+  #   user_signed_in?
+  # end
+  # deprecate logged_in?: :user_signed_in?, deprecator: Deprecator.new
+  # helper_method :logged_in?
 
   # ユーザーのログインを確認する
   def logged_in_user
@@ -104,6 +106,21 @@ class ApplicationController < ActionController::Base
 
   def store_location
     session[:forwarding_url] = request.url if request.get?
+  end
+
+
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
+  end
+
+  def logged_in?
+    !!session[:user_id]
+  end
+
+  def authenticate
+    return if logged_in?
+    redirect_to root_path, alert: 'ログインしてください'
   end
 end
 

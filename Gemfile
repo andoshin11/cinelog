@@ -23,6 +23,8 @@ gem 'sass-rails',   '~> 5.0.6'
 gem 'slack-notifier', '~> 2.0.0'
 gem 'honoka-rails', '>= 3.3.6.3'
 gem 'uglifier', '~> 2.5.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

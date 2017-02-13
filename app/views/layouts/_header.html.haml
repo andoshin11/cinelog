@@ -13,18 +13,10 @@
     .logo.logo_where_header
       %a{:href => "/"}
         %img.logo__img{src: "/logo.png"}
-    %ul.user-area.user-area_where_header
-      %li.user_info.user-area__list.dropdown.hidden-xs
-        %a#dropdownMenu1.dropdown__toggle{"data-toggle" => "dropdown", :href => "#"}
-          = current_user.name
-          %span.caret
-        %ul.dropdown-menu.dropdown__content{"aria-labelledby" => "dropdownMenu1"}
-          %li= link_to "Channel", root_path
-          %li.dropdown__divider
-          %li
-            = link_to "Log out", destroy_user_session_path, method: "delete"
-      %li.user-area__list.user-area__list_content_button.hidden-xs
-        = link_to 'New Post', new_post_path, class: "user-area__button button"
+    .header__links
+      = link_to "posts", posts_path, class: "header__link"
+      = link_to 'New Post', new_post_path, class: "header__link"
+      = link_to "Log out", logout_path, method: "delete", class: "header__link"
   - else
     %button.drawer-toggle.drawer-hamburger.header_humberger.visible-xs{type: "button"}
       %span.sr-only toggle navigation
@@ -39,7 +31,5 @@
     .logo.logo_where_header
       %a{:href => "/"}
         %img.logo__img{src: "/logo.png"}
-    %ul.user-area.user-area_where_header
-      %li.user-area__list.user-area__list_content_button.hidden-xs
-        = link_to 'Sign In', new_user_session_path, class: "user-area__button button"
-
+    .header__links
+      = link_to 'Log in with Twitter', '/auth/twitter', class: "header__link"
