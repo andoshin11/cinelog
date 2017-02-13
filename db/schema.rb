@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212212625) do
+ActiveRecord::Schema.define(version: 20170213113030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "title",             default: "", null: false
+    t.string   "poster_path"
+    t.text     "overview"
+    t.integer  "mvdb_id"
+    t.string   "original_title"
+    t.string   "original_language"
+    t.string   "backdrop_path"
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["mvdb_id"], name: "index_movies_on_mvdb_id", using: :btree
+    t.index ["user_id"], name: "index_movies_on_user_id", using: :btree
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text     "comment"

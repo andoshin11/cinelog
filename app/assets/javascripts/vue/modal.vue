@@ -5,9 +5,6 @@
         <div class="modal__wrapper">
           <div class="modal__container">
             <div class="modal__header">
-              <button class="modal__close" @click="$emit('close')">
-                <span aria-hidden="true">×</span>
-              </button>
               <slot name="header">
               </slot>
             </div>

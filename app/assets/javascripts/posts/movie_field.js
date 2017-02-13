@@ -26,6 +26,5 @@ export default {
   watch: {
   },
   mounted() {
-    this.fetch();
   },
 };

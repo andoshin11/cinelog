@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import page from './../utils/page';
 
-import searchField from './search_field.vue';
+import newPost from './new_post.vue';
 
 page('posts', 'new', () => {
   new Vue({
-    el: '#search_field',
+    el: '#new_post',
     render(createElement) {
-      return createElement(searchField);
+      return createElement(newPost);
     }
   });
 });

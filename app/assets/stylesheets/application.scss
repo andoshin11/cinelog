@@ -32,9 +32,12 @@ $white: #fff;
 /* General */
 html{
   // font-family: verdana, arial, helvetica, sans-serif;
-  font-family: Gotham-Light,Gotham-Medium,sans-serif;
+  // font-family: Gotham-Light,Gotham-Medium,sans-serif;
+  font-family: Arimo,Arial,Helvetica,"Lucida Grande",sans-serif;
   color: #666;
   background-color: #fff;
+
+  font-size: 14px;
 }
 
 body{
@@ -115,7 +118,11 @@ select{
 }
 
 textarea{
-  border-radius: 5px;
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  min-height: 255px;
   &:focus{
     outline-color: transparent;
     // outline-offset: 0;
@@ -160,7 +167,7 @@ ul {
   color: #666;
   background-color: #fff;
   border: solid 1px #ddd;
-  border-radius: 2px;
+  border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
   transition: .2s ease-out;
@@ -347,7 +354,7 @@ ul {
   .form__submit{
   }
   .form__text{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   select{
     display: inline-block;
@@ -644,6 +651,14 @@ ul {
     background-color: $beige;
     border-left: solid 2px $beige;
   }
+}
+
+.page-headline{
+  color: rgba(0,0,0,0.4);
+  font-size: 26px;
+  margin: 30px 0 10px;
+  padding-bottom: 15px;
+  border-bottom: solid 1px #ddd;
 }
 
 .page-list{  

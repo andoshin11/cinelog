@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :posts, only: [] do
       collection do
         get :index
+        post :create
       end
       member do
         get :show

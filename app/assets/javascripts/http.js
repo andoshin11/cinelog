@@ -43,6 +43,12 @@ async function withoutBody(method, url, options) {
   return await _fetch(url, options);
 }
 
+async function withoutBody2(method, url, options) {
+  Object.assign(options, {}, { method: method });
+
+  return await _fetch(url, options);
+}
+
 export default class HTTP {
   static async delete(url, params) {
     Object.assign(options);
@@ -52,6 +58,12 @@ export default class HTTP {
     const urlWithParams = buildURL(url, ObjectKeyTranslator.camelToSnake(parameters));
 
     return await withoutBody('GET', urlWithParams, options);
+  }
+
+  static async get2(url, parameters = {}, options = {}) {
+    const urlWithParams = buildURL(url, ObjectKeyTranslator.camelToSnake(parameters));
+
+    return await withoutBody2('GET', urlWithParams, options);
   }
 
   static async head(url, options = {}) {
