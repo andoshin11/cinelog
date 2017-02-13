@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @movie = @post.movie_id.present? ? Movie.find(@post.movie_id) : Movie.new
   end
 
   # GET /posts/new

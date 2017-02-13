@@ -1,5 +1,4 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
-  skip_before_action :check_user_status
 
   private
 

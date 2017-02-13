@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
         env: env,
         user: current_user,
       )
-      SlackNotifier.new.send(message)
+      # SlackNotifier.new.send(message)
 
       error_500(e)
     end

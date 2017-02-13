@@ -1,10 +1,14 @@
 %p#notice= notice
 
-%p
-  %b Comment:
-  = @post.comment
+/ #movie_field
 
-#movie_field
+.post.row
+  .post__thumbnail{style: "background-image: url('https://image.tmdb.org/t/p/w185_and_h278_bestv2#{@movie.poster_path}')"}
+  .post__info
+    .post__date= @post.updated_at
+    .post__title= @post.title
+    .post__movie= @movie.title
+    .post__comment= @post.comment 
 
 = link_to 'Edit', edit_post_path(@post)
 \|
