@@ -115,9 +115,11 @@
   .movie-info__overview{
     line-height: 1.5;
     font-size: 1rem;
+    text-overflow: ellipsis;
     overflow: hidden;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 10;
+    -webkit-line-clamp: 11;
   }
 }
 .movie-info__delete{

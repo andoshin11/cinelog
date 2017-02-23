@@ -1,9 +1,4 @@
-.collapse.navbar-collapse#bs-example-navbar-collapse-1
-  %ul.nav.navbar-nav.navbar-right
-    %li= link_to "Twitterでログイン", '/auth/twitter'
+- if user_signed_in?
+  %h1 Recent posts
 
-.div
-  - if current_user.present?
-    = current_user.name
-  - else
-    "ブランク"
+  #posts_field

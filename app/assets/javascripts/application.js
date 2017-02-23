@@ -24,6 +24,7 @@ import 'jquery-ujs';
 import $ from 'jquery';
 
 import './posts';
+import './static_pages';
 
 (function(){
 

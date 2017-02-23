@@ -14,7 +14,6 @@
       %a{:href => "/"}
         %img.logo__img{src: "/logo.png"}
     .header__links
-      = link_to "Posts", posts_path, class: "header__link"
       = link_to 'New Post', new_post_path, class: "header__link"
       = link_to "Log out", logout_path, method: "delete", class: "header__link"
   - else
@@ -32,4 +31,4 @@
       %a{:href => "/"}
         %img.logo__img{src: "/logo.png"}
     .header__links
-      = link_to 'Log in with Twitter', '/auth/twitter', class: "header__link"
+      = link_to 'Log in', '/auth/twitter', class: "header__link"
