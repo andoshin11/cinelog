@@ -2,7 +2,7 @@
   <form class="form">
     <div class="row">
       <div class="col-md-6">
-        <label class="form__label">Title:</label>
+        <label class="form__label">Title Test:</label>
         <input type="text" class="form__text" v-model="title" placeholder="Spectre">
         <label class="form__label">Comment</label>
         <textarea v-model="comment" placeholder="Add New Comment" class="form__text template-form__body"></textarea>

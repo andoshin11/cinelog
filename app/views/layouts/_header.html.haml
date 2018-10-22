@@ -5,14 +5,13 @@
       %span.drawer-hamburger-icon
     %nav.drawer-nav.header_humberger_list.visible-xs{role: "navigation"}
       %ul.drawer-menu
-        %li 
+        %li
           = link_to root_path, class: "sidebar-list-item #{"active" if current_page?(root_path)}", 'data-no-turbolink' => true do
             .sidebar_icon
               %i.fa.fa-list-ul{"aria-hidden" => "true"}
             %span Reservations
     .logo.logo_where_header
-      %a{:href => "/"}
-        %img.logo__img{src: "/logo.png"}
+      %a{:href => "/"} Filmo
     .header__links
       = link_to 'New Post', new_post_path, class: "header__link"
       = link_to "Log out", logout_path, method: "delete", class: "header__link"
@@ -22,13 +21,12 @@
       %span.drawer-hamburger-icon
     %nav.drawer-nav.header_humberger_list.visible-xs{role: "navigation"}
       %ul.drawer-menu
-        %li 
+        %li
           = link_to root_path, class: "sidebar-list-item #{"active" if current_page?(root_path)}", 'data-no-turbolink' => true do
             .sidebar_icon
               %i.fa.fa-list-ul{"aria-hidden" => "true"}
             %span Reservations
     .logo.logo_where_header
-      %a{:href => "/"}
-        %img.logo__img{src: "/logo.png"}
+      %a{:href => "/"} CINELOG
     .header__links
       = link_to 'Log in', '/auth/twitter', class: "header__link"

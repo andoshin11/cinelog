@@ -3,47 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post{
-  border: solid 1px #666;
-  border-radius: 2px;
-  margin-bottom: 20px;
-  background: #fff;
+  width: 15%;
   display: block;
-  color: #666;
-  letter-spacing: 1px;
-  width: 100%;
-  height: 302px;
-  &:hover{
-    opacity: .7;
-    background-color: #fff;
-    color: #666;
-    text-decoration: none;
+  float: left;
+  margin-left: 20px;
+  visibility: hidden;
+  &:first-child{
+    margin-left: 0px;
   }
-  .post__comment{
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  .post__info{
-    width: 70%;
-    padding: 20px;
-    float: left;
-  }
-  .post__movie{
-    font-size: 1rem;
-    line-height: 2;
-    opacity: .7;
-  }
-  .post__thumbnail{
+  &__thumbnail{
     display: block;
-    height: 300px;
-    width: 200px;
-    max-width: 30%;
-    float: left;
+    height: 100%;
+    width: 100%;
     background-size: cover;
-  }
-  .post__title{
-    font-size: 1.4rem;
-    line-height: 2;
-    font-weight: bold;
   }
 }
 
